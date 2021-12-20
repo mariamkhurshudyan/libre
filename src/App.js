@@ -1,9 +1,9 @@
+import Header from "./components/header/Header";
+
 const App = () => {
     return (
-        <div>
-            <h1 className="justTemporary">
-                hello my dear friend!!
-            </h1>
+        <div className='container'>
+          <Header />
         </div>
     );
 };

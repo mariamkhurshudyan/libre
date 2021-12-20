@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+}
+.header{
+    display: flex;
+    background-color: #2F365F;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+   padding-left: 40px;
+}
+
+.link{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    padding-right: 40px;
+}
