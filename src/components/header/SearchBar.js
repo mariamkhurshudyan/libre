@@ -1,64 +1,21 @@
-import SearchIcon from '@mui/icons-material/Search';
-import { styled, alpha } from '@mui/material/styles';
-import {InputBase} from "@mui/material";
-
+import {useState} from "react";
 
 export default function SearchBar() {
+    const [term, setTerm] = useState('')
+    console.log(term)
     return (
-        <div>
-            <Search>
-                <SearchIconWrapper>
-                    <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                    placeholder="Search…"
-                    inputProps={{ 'aria-label': 'search' }}
-                />
-            </Search>
-        </div>
+            <div className='search-container'>
+                <span className='holder'>
+                    <input value={term} onChange={({target})=>setTerm(target.value)} className='search' placeholder='Search' type='text'/>
+                    <div className='search-icon-container'>
+                        <svg viewBox="0 0 20 20" className='search-icon' xmlns="https://svg-clipart.com/svg/icon/nQy8yy4-search-icon-white-one-vector.svg" >
+                            <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                        </svg>
+                    </div>
+                </span>
+                <a className='link' href="/">Login </a>
+            </div>
+
+
     );
 }
-
-
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    marginTop: '15px',
-    marginBottom: '15px',
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
-    },
-}));
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    color: 'white',
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'white',
-    paddingLeft: '1.5rem',
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 1, 1, 0),
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '873px',
-            height: '31px',
-            padding: '4px 8px 4px 40px'
-        },
-    },
-}));
