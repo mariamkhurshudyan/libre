@@ -15,7 +15,5 @@ export default function SearchBar() {
                 </span>
                 <a className='link' href="/">Login </a>
             </div>
-
-
     );
 }
