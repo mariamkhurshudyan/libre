@@ -60,3 +60,19 @@
     fill: currentColor;
     pointer-events: none;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .logo-container{
+        display: none;
+    }
+    .link{
+        display: none;
+    }
+    .holder{
+        width: 90%;
+    }
+    .search-container{
+        flex-grow: 0.8;
+    }
+}
